@@ -205,49 +205,70 @@ Limit Price is the price.
 --------------------------------------
 FEED RULES:
 example : 
+
 1:OPEN:10:APPLE:LIMIT:645:BUY:33545:08213722
+
 [FEED_ID]:[TYPE]:[LOT]:[STOCK]:[LIMIT]:[VALUE]:[FEED]:[ORDER_ID]:[TIMESTAMP]
 
+
 [FEED_ID]
+
 Feed ID is increment
 
 [TYPE]
+
 -BUY
 -SELL
 
 [LOT]
+
 numeric only
 
 [STOCK]
+
 Stock Initial
 
 [LIMIT]
+
 -LIMIT
 -STOP
 -CURRENT
 
 [VALUE]
+
 ignored when [LIMIT] is CURRENT
 
 [FEED]
+
 -OPEN
 -CLOSE
 -CANCEL
 
 [TIMESTAMP]
+
 format ddhhmmss (day:hour:minute:second)
 
 
 Rule :
+
 -[TYPE], [LOT], [STOCK], [FEED] is mandatory
+
 -[FEED] OPEN / CLOSE is used to protect / prevent application when received SELL signal but didnt receive BUY signal earlier
+
 -[FEED] CLOSE / CANCEL with no [FEED_ID] will be ignored
+
 -every OPEN position will save current Transaction ID from TWS / IB Gateway to database
+
 -VALUE only needed when the [LIMIT] is LIMIT or STOP
+
 -[FEED] CANCEL only used to cancel OPEN LIMIT/STOP.
+
 -everytime [FEED] OPEN signal received, we will save the [FEED_ID], and use [FEED_ID] for priority order
+
 -Priority order is used if there are more than one order at the same time, the priority will be start from the last saved [FEED_ID] and ordered incrementally with [FEED_ID]
+
 -the [FEED] OPEN signal will be executed if it's less than 15 seconds (Configurable)
+
 -[TIMESTAMP] format is "ddhhmmss" only for checking fresh feed or not
 
 
