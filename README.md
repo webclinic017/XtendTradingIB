@@ -15,8 +15,11 @@ To build an automated stock trading system by providing stock trading signal web
 
 Deliverables of this project consist of 3 parts, the website, the signal executor, and the signal reader.
 In Scope 
+
 •	The website will allow user to register their account, and pay their subscription via paypal. After user successfully pays their subscription and become a valid member, the user can be able to download the signal executor robot and login to the signal executor robot using their registered account. The admin of the website can add / delete the user. User approval also managed by the admin of the website. The website and the signal reader is merged into one web service system.
+
 •	The signal executor will execute trade using Interactive Broker’s Trader Workstation, or IB Gateway. User can login their registered and approved account into the signal executor, but not their Interactive Broker’s account, related to the confidentiality policy. They must login their Interactive Broker’s account into Interactive Broker’s Trader Workstation, or IB Gateway. The signal executor will consist of three features: trading active mode, transaction history, and signal list. Trading active mode means that the signal executor will request the newest signal from the website and trade based on the website’s response. When a valid trading request is received, the signal executor will give command to the Interactive Broker’s Trader Workstation, or IB Gateway to execute the trade. The signal executor will provide the transaction history that the signal executor has ever triggered, not the transaction history in user’s Interactive Broker’s account. And user can also review the signal provider list that the website provide and switch which signal provider that the user wants to use. The user only be able to use 1 signal provider per account.
+
 •	The signal reader will read wsdl provided by the signal providers. Then the signal reader will parse the wsdl into command for the signal executor. When the signal executor request for the signal, the signal reader will return the newest signal based on the signal providers’ wsdl. The signal reader must be able to read more than one signal provider.
 
 
