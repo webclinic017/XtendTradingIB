@@ -53,6 +53,7 @@ MainPanel.java
 HomepagePanel.java
 
 	layout() is the method which construct the homepagepanel. We are using GridBagLayout to construct the homepage.
+	
 This panel have 5 request methods. They are RequestConnect(), RequestDisconnect(), RequestLogin(), RequestLogout(), and doExit(). Basically homepagepanel is divided into two part, they are IB Gateway / TWS connection part, and XtendTrading login connection part. The logic of connection is put in HomepageController.java. To add / update the method of connecting, please refer to HomepageController. Each time you successfully login / connect, the symbol sign will turn green, means that you are pass their validation. If you have both successfully connecting to IB Gateway / TradeWorkstation, you will have two green mark, and then button continue will be appeared. Else the button continue will be disabled. demoConnect() only for demo purpose, please remove it when finalizing the application.
 
 	And every interaction from HomepageController, it will call response methods in HomepagePanel, such as changing the symbol from red to green, change the status, revalidate the button continue. There are 3 response methods, they are setMessage(), setStatusandButton(), revalidateContinueButton(). setMessage() is to display if there is any error message related to the interaction from HomepageController. setStatusandButton() will be called to change validation status from red to green, et cetera. revalidateContinueButton will calculate the status and decide whether the button continue is allowed to displayed or not. 
@@ -65,6 +66,7 @@ DashboardPanel.java
 HistoryPanel.java
 
 	This panel is showing the transaction history, with more complete information. This panel is not yet finished yet.
+	
 TradingPanel.java
 
 	This is only the demo panel, to show how the application connect and communicate the command to execute a new trade via Interactive Broker’s API to the IB Gateway / TradeWorkstation.
@@ -74,6 +76,7 @@ LoginPanel.java & HomePanel.java
 	These panels are the ancestor of Dashboard panel. I have thought two different pages for login and connecting, but I think it will be better to combine these two panels, into homepagePanel.java. These two panels is already not used.
 	
 Package : com.xtendtrading.ibbot.controller
+
 HomepageController.java
 
 	There are two parts here, they are Interactive Broker Gateway / TradeWorkstation connection part, and XtendTrading login connection part. ConnectingIBGateway() and DisconnectingIBGateway() are call Interactive Broker’s API to connect and disconnect into TradeWorkStation / IB Gateway. You will notice thate these methods will called IBController.java. A successful connection on ConnectingIBGateway(), will change status on HomepagePanel become green. Meanwhile ConnectingServerLogin() and DisconnectingServerLogin() will connect XtendTrading.com to validating the login information. A successful connection on ConnectingServerLogin (), will change status on HomepagePanel become green. And GoToNextPanel() will be executed when user click button continue on homepagepanel.
@@ -175,9 +178,11 @@ Here is the connection display :
 For now the IP Address, just leave blank, because we open TWS in same computer… 
 Default port is 7496, to change the port, you can change it in your TWS / IB Gateway
 Client ID is use when you want to use two application, but for now, just use 0
+
  
 7.	After that, just press Connect.. If you don’t want to connect to TWS and just want to feel the application, just press “Demo Only”.. If your configuration correct, the TWS will read your request and ask for permission..
 If you use IB Gateway, it will be directly connected without any permission..
+ 
  
 8.	After that, the second display is login display.. this is used to validate whether the customer already subscribe into your xtendtrading or not.. if you click login you will connect to the web and the website will validate your username and password..
 Because the feature is still not complete, we can just leave the username & password blank, and then press Login.  
