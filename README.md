@@ -14,7 +14,8 @@ To build an automated stock trading system by providing stock trading signal web
 3	SCOPE DESCRIPTION
 
 Deliverables of this project consist of 3 parts, the website, the signal executor, and the signal reader.
-In Scope 
+
+In Scope :
 
 •	The website will allow user to register their account, and pay their subscription via paypal. After user successfully pays their subscription and become a valid member, the user can be able to download the signal executor robot and login to the signal executor robot using their registered account. The admin of the website can add / delete the user. User approval also managed by the admin of the website. The website and the signal reader is merged into one web service system.
 
@@ -39,7 +40,9 @@ In Scope
 
 ------------------------------
 
+
 XtendTrading.com Ibbot Desktop Application Documentation
+
 
 Package : com.ib.client
 Contain library for Interactive Broker’s API
@@ -50,9 +53,11 @@ MainFrame.java
 
 Start from here, First it will register all controllers and views, so if you create another panel, it must be registered in here. The method to register all controllers and views is registerAllViews() & registerAllControllers(). These methods are called in constructor AbstractFrame(). All the panel is controlled in MainPanel.java.
 
+
 MainPanel.java
 
 	All of panels is put on CardLayout, so they can switch to another page easily. Remember when register a new panel, it must be registered in method registerAllViews(). Now let’s we go through each panel.
+	
 HomepagePanel.java
 
 	layout() is the method which construct the homepagepanel. We are using GridBagLayout to construct the homepage.
