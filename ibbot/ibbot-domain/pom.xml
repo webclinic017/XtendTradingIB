@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ibbot</groupId>
+		<artifactId>ibbot</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>ibbot-domain</artifactId>
+	
+	<name>IBBot Data Domain</name>
+	<description>IBBot Data Domain</description>
+	<url>http://www.ibbot.com</url>
+	
+	<dependencies>
+		<!-- Hibernate & JPA Dependencies -->
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-entitymanager</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate.java-persistence</groupId>
+			<artifactId>jpa-api</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.hibernate</groupId>
+			<artifactId>hibernate-validator</artifactId>
+		</dependency>
+		
+		<!-- Database Dependencies -->
+		<dependency>
+   			<groupId>postgresql</groupId>
+   			<artifactId>postgresql</artifactId>
+		</dependency>
+	</dependencies>
+</project>

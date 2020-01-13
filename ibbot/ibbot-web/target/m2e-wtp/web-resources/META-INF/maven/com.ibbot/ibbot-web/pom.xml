@@ -1,0 +1,60 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ibbot</groupId>
+		<artifactId>ibbot</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>ibbot-web</artifactId>
+	<packaging>war</packaging>
+	
+	<name>IBBot Web Site</name>
+	<description>IBBot Web Site</description>
+	<url>http://www.ibbot.com</url>
+  
+  	<dependencies>
+  		<!-- IBBot Dependencies -->
+		<dependency>
+	    	<groupId>com.ibbot</groupId>
+	    	<artifactId>ibbot-service</artifactId>
+	    </dependency>
+		    
+  		<!-- Spring Dependencies -->
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-web</artifactId>
+	    </dependency>
+	    <dependency>
+	    	<groupId>org.springframework</groupId>
+	    	<artifactId>spring-webmvc</artifactId>
+	    </dependency>
+	    
+	    <!-- Spring Security Dependencies -->
+	    <dependency>
+	    	<groupId>org.springframework.security</groupId>
+	    	<artifactId>spring-security-web</artifactId>
+	    </dependency>
+	    
+		<!-- JSTL Dependencies -->
+		<dependency>
+		    <groupId>javax.servlet</groupId>
+		    <artifactId>jstl</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>taglibs</groupId>
+			<artifactId>standard</artifactId>
+		</dependency>
+		
+		<!-- Servlet Dependencies -->
+		<dependency>
+			<groupId>javax.servlet</groupId>
+			<artifactId>servlet-api</artifactId>
+			<scope>provided</scope>
+		</dependency>
+  	</dependencies>
+  
+  	<build>
+    	<finalName>ibbot-web</finalName>
+  	</build>
+</project>

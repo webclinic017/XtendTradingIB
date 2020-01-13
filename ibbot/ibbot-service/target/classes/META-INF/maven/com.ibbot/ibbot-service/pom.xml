@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.ibbot</groupId>
+		<artifactId>ibbot</artifactId>
+		<version>1.0.0</version>
+	</parent>
+	<artifactId>ibbot-service</artifactId>
+	
+	<name>IBBot Service</name>
+	<description>IBBot Service</description>
+	<url>http://www.ibbot.com</url>
+	
+	<dependencies>
+		<!-- IBBot Dependencies -->
+		<dependency>
+	    	<groupId>com.ibbot</groupId>
+	    	<artifactId>ibbot-common</artifactId>
+	    </dependency>
+		<dependency>
+			<groupId>com.ibbot</groupId>
+		    <artifactId>ibbot-dao</artifactId>
+		</dependency>
+		
+		<!-- Spring Dependencies -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-tx</artifactId>
+		</dependency>
+		
+		<!-- Spring Security Dependencies -->
+		<dependency>
+	    	<groupId>org.springframework.security</groupId>
+	    	<artifactId>spring-security-core</artifactId>
+	    </dependency>
+		<dependency>
+	    	<groupId>org.springframework.security</groupId>
+	    	<artifactId>spring-security-config</artifactId>
+	    </dependency>
+	</dependencies>
+</project>

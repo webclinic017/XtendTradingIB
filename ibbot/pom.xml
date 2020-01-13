@@ -1,0 +1,211 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>com.ibbot</groupId>
+	<artifactId>ibbot</artifactId>
+	<version>1.0.0</version>
+	<packaging>pom</packaging>
+	
+	<name>IBBot</name>
+	<description>Interactive Broker Trading Automation Robot Project</description>
+	
+	<properties>
+		<!-- Generic Properties -->
+		<java.version>1.7</java.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		
+		<spring.version>3.2.3.RELEASE</spring.version>
+		<spring.data.version>1.4.2.RELEASE</spring.data.version>
+		<spring.security.version>3.2.0.RELEASE</spring.security.version>
+		
+		<hibernate.version>4.2.8.Final</hibernate.version>
+		<hibernate.jpa.version>2.0-cr-1</hibernate.jpa.version>
+		<hibernate-validator.version>4.3.1.Final</hibernate-validator.version>
+		
+		<postgres.version>9.1-901.jdbc4</postgres.version>
+
+		<aspectj.version>1.6.10</aspectj.version>
+		
+		<jstl.version>1.1.2</jstl.version>
+		<servlet.version>2.5</servlet.version>
+		
+		<postgres.version>9.1-901.jdbc4</postgres.version>
+		
+		<logback.version>1.0.12</logback.version>
+		<slf4j.version>1.7.5</slf4j.version>
+	</properties>
+	
+	<modules>
+	    <module>ibbot-web</module>
+	    <module>ibbot-common</module>
+    	<module>ibbot-domain</module>
+    	<module>ibbot-dao</module>
+    	<module>ibbot-service</module>
+	</modules>	
+	
+	<dependencyManagement>
+		<dependencies>
+			<!-- IBBot Dependencies -->
+			<dependency>
+		    	<groupId>com.ibbot</groupId>
+		    	<artifactId>ibbot-common</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>		
+		    <dependency>
+		    	<groupId>com.ibbot</groupId>
+		    	<artifactId>ibbot-domain</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+		    	<groupId>com.ibbot</groupId>
+		    	<artifactId>ibbot-dao</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>
+		    <dependency>
+		    	<groupId>com.ibbot</groupId>
+		    	<artifactId>ibbot-service</artifactId>
+		    	<version>${project.version}</version>
+		    </dependency>
+		
+			<!-- Spring Dependencies -->
+			<dependency>
+		    	<groupId>org.springframework</groupId>
+		    	<artifactId>spring-core</artifactId>
+		    	<version>${spring.version}</version>
+		    </dependency>
+		    <dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-aspects</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.springframework</groupId>
+				<artifactId>spring-tx</artifactId>
+				<version>${spring.version}</version>
+			</dependency>
+		    <dependency>
+		    	<groupId>org.springframework</groupId>
+		    	<artifactId>spring-web</artifactId>
+		    	<version>${spring.version}</version>
+		    </dependency>
+		    <dependency>
+		    	<groupId>org.springframework</groupId>
+		    	<artifactId>spring-webmvc</artifactId>
+		    	<version>${spring.version}</version>
+		    </dependency>
+		    
+		    <!-- Spring Data Dependencies -->
+		    <dependency>
+				<groupId>org.springframework.data</groupId>
+				<artifactId>spring-data-jpa</artifactId>
+				<version>${spring.data.version}</version>
+			</dependency>
+			
+			<!-- Spring Security Dependencies -->
+			<dependency>
+		    	<groupId>org.springframework.security</groupId>
+		    	<artifactId>spring-security-core</artifactId>
+		    	<version>${spring.security.version}</version>
+		    </dependency>
+			<dependency>
+		    	<groupId>org.springframework.security</groupId>
+		    	<artifactId>spring-security-config</artifactId>
+		    	<version>${spring.security.version}</version>
+		    </dependency>
+		    <dependency>
+		    	<groupId>org.springframework.security</groupId>
+		    	<artifactId>spring-security-web</artifactId>
+		    	<version>${spring.security.version}</version>
+		    </dependency>
+		    
+			<!-- Hibernate & JPA Dependencies -->
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-entitymanager</artifactId>
+				<version>${hibernate.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate.java-persistence</groupId>
+				<artifactId>jpa-api</artifactId>
+				<version>${hibernate.jpa.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.hibernate</groupId>
+				<artifactId>hibernate-validator</artifactId>
+				<version>${hibernate-validator.version}</version>
+			</dependency>
+			
+			<!-- Database Dependencies -->
+			<dependency>
+    			<groupId>postgresql</groupId>
+    			<artifactId>postgresql</artifactId>
+    			<version>${postgres.version}</version>
+			</dependency>
+			
+		    <!-- AOP Dependencies -->
+		    <dependency>
+			    <groupId>org.aspectj</groupId>
+			    <artifactId>aspectjrt</artifactId>
+			    <version>${aspectj.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>org.aspectj</groupId>
+				<artifactId>aspectjweaver</artifactId>
+				<version>${aspectj.version}</version>
+			</dependency>
+			
+			<!-- JSTL Dependencies -->
+			<dependency>
+			    <groupId>javax.servlet</groupId>
+			    <artifactId>jstl</artifactId>
+			    <version>${jstl.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>taglibs</groupId>
+				<artifactId>standard</artifactId>
+				<version>${jstl.version}</version>
+			</dependency>
+			
+			<!-- Servlet Dependencies -->
+			<dependency>
+				<groupId>javax.servlet</groupId>
+				<artifactId>servlet-api</artifactId>
+				<version>${servlet.version}</version>
+				<scope>provided</scope>
+			</dependency>
+			
+			<!-- Logging Dependencies -->
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-api</artifactId>
+				<version>${slf4j.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+			<dependency>
+				<groupId>ch.qos.logback</groupId>
+				<artifactId>logback-classic</artifactId>
+				<version>${logback.version}</version>
+				<scope>runtime</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+	
+	<build>
+		<pluginManagement>
+			<plugins>
+				<plugin>
+					<groupId>org.apache.maven.plugins</groupId>
+					<artifactId>maven-compiler-plugin</artifactId>
+					<version>3.1</version>
+					<configuration>
+						<source>${java.version}</source>
+						<target>${java.version}</target>
+						<compilerArgument>-Xlint:all</compilerArgument>
+						<showWarnings>true</showWarnings>
+						<showDeprecation>true</showDeprecation>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+</project>
